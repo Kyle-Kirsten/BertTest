@@ -1,0 +1,16 @@
+PRE_TRAINED_MODEL_NAME = "prajjwal1/bert-small"
+MAX_LEN = 100
+BATCH_SIZE = 16
+RANDOM_SEED = 40
+EPOCHS = 20
+EPOCH_SIZE = 1000
+都为随机取EPOCH_SIZE个batch训练
+lr和drop都是默认的2e-5和0.3
+练到后面有点练不动了
+
+Train loss: 0.512309511601925
+Train accuracy: 0.81675
+Val loss: 0.5041573625802994
+Val accuracy: 0.8298125000000001
+EPOCH 17/20
+0.031243562698364258
