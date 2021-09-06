@@ -1,0 +1,138 @@
+BATCH_SIZE = 50
+一个epoch遍历所有batch
+dataloader不shuffle，单线程
+未冻结bert的参数
+
+E:\Anaconda\envs\pytorch\python.exe E:/Project/py/BERT/test_yelp.py
+cuda:0
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+E:\Anaconda\envs\pytorch\lib\site-packages\transformers\tokenization_utils_base.py:2068: FutureWarning: The `pad_to_max_length` argument is deprecated and will be removed in a future version, use `padding=True` or `padding='longest'` to pad to the longest sequence in the batch, or use `padding='max_length'` to pad to a max length. In this case, you can give a specific length with `max_length` (e.g. `max_length=45`) or leave max_length to None to pad to the maximal input size of the model (e.g. 512 for Bert).
+  warnings.warn(
+tensor([1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1,
+        1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1,
+        0, 0])
+tensor([[ 101, 3505, 1998,  ...,    0,    0,    0],
+        [ 101, 1996, 2833,  ...,    0,    0,    0],
+        [ 101, 2009, 2038,  ...,    0,    0,    0],
+        ...,
+        [ 101, 1996, 2833,  ...,    0,    0,    0],
+        [ 101, 2026, 2564,  ...,    0,    0,    0],
+        [ 101, 2057, 2371,  ...,    0,    0,    0]], device='cuda:0')
+tensor([[1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        ...,
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0],
+        [1, 1, 1,  ..., 0, 0, 0]], device='cuda:0')
+tensor([[ 0.9557,  0.9682, -0.1540,  ...,  0.4096, -0.3237, -0.1510],
+        [ 0.9867, -0.4657, -0.2072,  ..., -0.1017, -0.6465, -0.6058],
+        [ 0.8662,  0.8110,  0.0384,  ...,  0.5337, -0.0668, -0.7956],
+        ...,
+        [ 0.9973, -0.2515, -0.2531,  ..., -0.0141, -0.6712, -0.4776],
+        [ 0.9454,  0.3298, -0.1345,  ...,  0.2700, -0.6734, -0.8196],
+        [ 0.8698, -0.8641,  0.0888,  ..., -0.2793, -0.5654, -0.8658]],
+       device='cuda:0', grad_fn=<TanhBackward>)
+tensor([[0.4878, 0.5122],
+        [0.3916, 0.6084],
+        [0.4090, 0.5910],
+        [0.4657, 0.5343],
+        [0.4916, 0.5084],
+        [0.4160, 0.5840],
+        [0.6374, 0.3626],
+        [0.4426, 0.5574],
+        [0.3956, 0.6044],
+        [0.5066, 0.4934],
+        [0.4162, 0.5838],
+        [0.5507, 0.4493],
+        [0.4026, 0.5974],
+        [0.4143, 0.5857],
+        [0.6152, 0.3848],
+        [0.6692, 0.3308],
+        [0.4763, 0.5237],
+        [0.5120, 0.4880],
+        [0.4584, 0.5416],
+        [0.3144, 0.6856],
+        [0.3567, 0.6433],
+        [0.5745, 0.4255],
+        [0.3989, 0.6011],
+        [0.3537, 0.6463],
+        [0.4913, 0.5087],
+        [0.4292, 0.5708],
+        [0.4085, 0.5915],
+        [0.3402, 0.6598],
+        [0.5005, 0.4995],
+        [0.3295, 0.6705],
+        [0.4422, 0.5578],
+        [0.6214, 0.3786],
+        [0.5288, 0.4712],
+        [0.6555, 0.3445],
+        [0.4016, 0.5984],
+        [0.6194, 0.3806],
+        [0.6852, 0.3148],
+        [0.4181, 0.5819],
+        [0.5796, 0.4204],
+        [0.6065, 0.3935],
+        [0.5136, 0.4864],
+        [0.5633, 0.4367],
+        [0.3804, 0.6196],
+        [0.4971, 0.5029],
+        [0.4416, 0.5584],
+        [0.4372, 0.5628],
+        [0.5000, 0.5000],
+        [0.5273, 0.4727],
+        [0.3545, 0.6455],
+        [0.4832, 0.5168]], device='cuda:0', grad_fn=<SoftmaxBackward>)
+EPOCH 1/20
+Train loss: 0.5322599115671506
+Train accuracy: 0.7949025109153097
+Val loss: 0.4888030076824774
+Val accuracy: 0.8449663689491674
+EPOCH 2/20
+Train loss: 0.4858852501899477
+Train accuracy: 0.8384106318157355
+Val loss: 0.46582072142540937
+Val accuracy: 0.8622938424460092
+EPOCH 3/20
+Train loss: 0.47264283927029405
+Train accuracy: 0.8478409190702114
+Val loss: 0.4554340338613105
+Val accuracy: 0.8697289038010175
+EPOCH 4/20
+Train loss: 0.4661850812238414
+Train accuracy: 0.8516215905841238
+Val loss: 0.4493632930000936
+Val accuracy: 0.8739347541861601
+EPOCH 5/20
+Train loss: 0.46200928561365123
+Train accuracy: 0.8540332041585135
+Val loss: 0.4451632362181746
+Val accuracy: 0.8760928122489485
+EPOCH 6/20
+ Train loss: 0.45891672385566934
+Train accuracy: 0.8562759372304948
+Val loss: 0.4422841934472557
+Val accuracy: 0.8776837893609313
+EPOCH 7/20
+Train loss: 0.45727304954404274
+Train accuracy: 0.8570730532018617
+Val loss: 0.43996989987497254
+Val accuracy: 0.8790384827434116
+EPOCH 8/20
+Train loss: 0.45577913637796286
+Train accuracy: 0.8579940148749946
+Val loss: 0.43836220563866024
+Val accuracy: 0.8796370681914844
+EPOCH 9/20
+Train loss: 0.45494580861350026
+Train accuracy: 0.8582394545384946
+Val loss: 0.4370749077693684
+Val accuracy: 0.880361671628625
+EPOCH 10/20
+Train loss: 0.45396564704440784
+Train accuracy: 0.8586875508048843
+Val loss: 0.4358571731434094
+Val accuracy: 0.8809917615739646
+EPOCH 11/20
+
+Process finished with exit code -1
